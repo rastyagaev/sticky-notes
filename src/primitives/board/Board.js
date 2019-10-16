@@ -30,6 +30,8 @@ function useRandom(min, max) {
 }
 
 export default function Board({
+  defaultName,
+  defaultEmail,
   notes = [],
   onDelete = () => {},
   onUpdate = () => {},
@@ -68,6 +70,8 @@ export default function Board({
           note={note}
           onSubmit={handleNoteSave.bind(null, note)}
           onDelete={handleNoteDelete.bind(null, note)}
+          defaultName={defaultName}
+          defaultEmail={defaultEmail}
         />
       </div>
     );

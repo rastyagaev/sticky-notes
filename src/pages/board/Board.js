@@ -24,8 +24,10 @@ export default function BoardPage() {
     return dispatch(createNote({ boardId, ...note }));
   }
 
-  function handleUpdateNote(note, data) {
-    return dispatch(updateNote(note, data));
+  function handleUpdateNote(note, { name = "", email = "", ...data }) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    return dispatch(updateNote(note, { name, email, ...data }));
   }
 
   function handleDeleteNote(note) {
@@ -39,6 +41,8 @@ export default function BoardPage() {
         onAdd={handleCreateNote}
         onUpdate={handleUpdateNote}
         onDelete={handleDeleteNote}
+        defaultName={window.localStorage.getItem("name")}
+        defaultEmail={window.localStorage.getItem("email")}
       />
     </div>
   );
