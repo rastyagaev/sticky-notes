@@ -14,6 +14,12 @@ export default function NoteForm({ note, onSubmit, onDelete }) {
         />
         <input
           type="text"
+          name="name"
+          defaultValue={note.get("name")}
+          placeholder="Your name"
+        />
+        <input
+          type="email"
           name="email"
           defaultValue={note.get("email")}
           placeholder="Email"

@@ -47,8 +47,9 @@ export default function Board({
   async function handleNoteSave(note, event) {
     event.preventDefault();
     const text = event.target["text"].value;
+    const name = event.target["name"].value;
     const email = event.target["email"].value;
-    await onUpdate(note, { text, email });
+    await onUpdate(note, { text, email, name });
     closeOverlay();
   }
 

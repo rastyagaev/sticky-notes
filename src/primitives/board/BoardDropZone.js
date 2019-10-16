@@ -22,7 +22,13 @@ export default function BoardDropZone({ onAdd, onEdit, notes, colors }) {
         >
           <Note rotate={note.get("rotate")} color={note.get("color")}>
             <div>{note.get("text")}</div>
-            <EmailField email={note.get("email")} />
+            <div>
+              {note
+                .get("created")
+                .toDate()
+                .toLocaleDateString()}
+            </div>
+            <EmailField name={note.get("name")} email={note.get("email")} />
           </Note>
         </div>
       ))}
