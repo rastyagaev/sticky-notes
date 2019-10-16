@@ -1,0 +1,43 @@
+:root {
+  --board-padding: 1rem;
+  --board-columns: 4;
+  --board-columns-grid: 4fr;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--board-columns-grid) 1fr;
+  grid-gap: 0;
+}
+
+.board {
+  padding: var(--board-padding);
+  background: #f0f0f0;
+  box-shadow: inset -10px -0px 10px -10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.controls {
+  padding: var(--board-padding);
+  background: #333;
+  color: white;
+  display: grid;
+  align-content: flex-start;
+  grid-gap: 3em;
+  justify-items: center;
+
+  a {
+    color: inherit;
+  }
+}
+
+.newNote {
+  width: 100%;
+}
+
+.note {
+  position: absolute;
+  width: calc(100% / calc(var(--board-columns) + 1) - var(--board-padding) * 2);
+}

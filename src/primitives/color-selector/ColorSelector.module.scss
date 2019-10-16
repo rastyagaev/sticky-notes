@@ -1,0 +1,24 @@
+:root {
+  --color-selector-width: 30px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 5px;
+
+  li {
+    height: var(--color-selector-width);
+    width: var(--color-selector-width);
+    border-radius: 100%;
+  }
+
+  li:not([data-selected="true"]) {
+    box-shadow: inset -1px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}

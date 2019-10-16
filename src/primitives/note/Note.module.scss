@@ -1,0 +1,31 @@
+.note {
+  width: 100%;
+  word-break: break-word;
+  position: relative;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.1);
+  background: lightblue;
+  font-size: 90%;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease-in-out;
+  color: #333;
+
+  &:after {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    display: grid;
+    grid-gap: 1.4em;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+}

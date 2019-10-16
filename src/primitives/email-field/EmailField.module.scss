@@ -1,0 +1,11 @@
+.email {
+  display: inline-grid;
+  grid-gap: 0.5em;
+  grid-auto-flow: column;
+  align-items: center;
+
+  img {
+    width: 2em;
+    border-radius: 100%;
+  }
+}
